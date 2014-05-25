@@ -5,18 +5,18 @@ prompt = ">"
 puts "Welcome to the Leap Years Program"
 puts "Enter the starting year:"
 print prompt
-startYEAR = gets.chomp.to_i
+startYear = gets.chomp.to_i
 
 puts "Enter the ending year:"
 print prompt
-endYEAR = gets.chomp.to_i
+endYear = gets.chomp.to_i
 
-while startYEAR <= endYEAR
-	if ((startYEAR % 400) == 0)
-		puts startYEAR.to_s
-	elsif (((startYEAR % 4) == 0) && ((startYEAR % 100) != 0))
-		puts startYEAR.to_s
+while startYear <= endYear
+	if ((startYear % 400) == 0)
+		puts startYear.to_s
+	elsif (((startYear % 4) == 0) && ((startYear % 100) != 0))
+		puts startYear.to_s
 	end
 
-	startYEAR = startYEAR + 1
+	startYear = startYear + 1
 end
