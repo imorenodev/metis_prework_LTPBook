@@ -15,6 +15,7 @@ world = [[o,o,o,o,o,o,o,o,o,o,o],
          [o,o,o,o,o,o,o,o,o,o,o]]
 
 def continent_size world, x, y
+  puts "#{x}, #{y}"
   if world[y][x] != "land"
     # Either it's water or already been counted
     return 0
@@ -23,14 +24,24 @@ def continent_size world, x, y
   size = 1
   world[y][x] = "counted land"
   # and then we count all of the neighboring eight tiles and their neighbors by recursion.
+  puts size.to_s
+  puts "x-1, y-1"
   size = size + continent_size(world, x-1, y-1)
+  puts "x, y-1"  
   size = size + continent_size(world, x, y-1)
+  puts "x+1, y-1"
   size = size + continent_size(world, x+1, y-1)
+  puts "x-1, y"
   size = size + continent_size(world, x-1, y)
+  puts "x+1, y"
   size = size + continent_size(world, x+1, y)
+  puts "x-1, y+1"
   size = size + continent_size(world, x-1, y+1)
+  puts "x, y"
   size = size + continent_size(world, x, y+1)
+  puts "x+1, y+1"
   size = size + continent_size(world, x+1, y+1)
+  
   size
 end
 
